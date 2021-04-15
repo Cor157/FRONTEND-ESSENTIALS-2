@@ -1,12 +1,11 @@
 strAlfabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
 var strInput = "";          //input string
 var strCodeword = "";       //codeword string
 var strCodewordFull = "";   //output string
 
 arrInputPosities = [];      //array van input posities
 arrCodewordPosities = [];   //array van codeword posities
-arrOutputPosities = [];     //array van output posities
+arrOutputPosities = [];     //array van output    posities
 
 //Zet een string om naar een array met posities
 function stringNaarPosities(str){
@@ -27,6 +26,13 @@ function stringNaarPosities(str){
 function positiesNaarString(arr){
     var outputString = "";
     //TODO: opdracht 1
+    for (let k = 0; k < arr.length; k++){
+        let pos = arr[k]; 
+        let letter =  strAlfabet[pos];
+        for ( let l = 0; l < letter.length; l++){
+            outputString = outputString + letter;
+        }   
+}
     return outputString;
 }
 
@@ -42,11 +48,17 @@ function vermenigvuldigCodeword(strInput, strCodeword){
     var intMod = inputLength % codewordLength; //het aantal letters dat overblijft die nog moeten worden aangevuld
 
     //TODO: opdracht 2
-
-    // console.log("Codeword full: " + outputString);
-    return outputString;
+    for (let m = 0; m < intDiv; m++) {
+        outputString = outputString + strCodeword;
 }
-
+for (let n = 0; n < intMod; n++) {
+    outputString = outputString + strCodeword[n];
+}   
+console.log("Codeword full: " + outputString);
+return outputString;
+}
+    // console.log("Codeword full: " + outputString);
+    
 //functie die een een bericht versleuteld.
 function versleutel(){
     strInput = document.querySelector("#input").value; 
